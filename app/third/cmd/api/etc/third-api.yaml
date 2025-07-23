@@ -1,0 +1,15 @@
+Name: third-api
+Host: 0.0.0.0
+Port: 5001
+
+Log:
+  ServiceName: third-api
+  Level: info
+  Mode: file
+  Encode: plain
+
+Redis:
+  Host: 54.213.111.192:6379
+  Type: node
+  Pass: MtpRedis011
+  DB: 7

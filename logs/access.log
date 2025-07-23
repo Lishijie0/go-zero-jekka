@@ -1,0 +1,11 @@
+2025-03-07T00:00:51.648+08:00	 info 	compressing log file: logs/stat.log-2025-03-06	caller=logx/rotatelogger.go:419
+2025-03-07T00:00:51.649+08:00	 info 	compressing log file: logs/access.log-2025-03-06	caller=logx/rotatelogger.go:419
+2025-03-07T00:00:51.655+08:00	 info 	compressed log file: logs/access.log-2025-03-06, took 5.528209ms	caller=logx/rotatelogger.go:423
+2025-03-07T00:00:51.655+08:00	 info 	compressed log file: logs/stat.log-2025-03-06, took 7.74525ms	caller=logx/rotatelogger.go:423
+2025-03-20T11:04:40.585+08:00	 info 	Asynq monitor server start at 0.0.0.0:8901/monitor	caller=mq/mqueue.go:36
+{"@timestamp":"2025-03-20T11:05:16.624+08:00","caller":"handler/loghandler.go:147","content":"[HTTP] 200 - POST /api/v1/shop/syncWebhookOrder - 127.0.0.1:61092 - PostmanRuntime-ApipostRuntime/1.1.0","duration":"970.9ms","level":"info","span":"d7840618853096e6","trace":"1f62055db9fc313680325f3d3a8a9b50"}
+2025-03-20T11:05:20.340+08:00	 info 	sync:webhook:order: started	caller=handler/syncwebhookorderhandler.go:33
+2025-03-20T11:21:09.112+08:00	 info 	Asynq monitor server start at 0.0.0.0:8901/monitor	caller=mq/mqueue.go:36
+{"@timestamp":"2025-03-20T11:21:20.982+08:00","caller":"handler/loghandler.go:147","content":"[HTTP] 200 - POST /api/v1/shop/syncWebhookOrder - 127.0.0.1:49313 - PostmanRuntime-ApipostRuntime/1.1.0","duration":"984.0ms","level":"info","span":"2e65c43c96e444cd","trace":"3b73b06d5f249ec41723c83a8f77a4ab"}
+2025-03-20T11:21:25.410+08:00	 info 	sync:webhook:order: started	caller=handler/syncwebhookorderhandler.go:33
+2025-07-18T16:34:50.496+08:00	 info 	Asynq monitor server start at 0.0.0.0:8901/monitor	caller=mq/mqueue.go:36

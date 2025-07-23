@@ -1,0 +1,67 @@
+version: '3.5'
+# 网络配置
+networks:
+  jekka-go:
+    driver: bridge
+
+# 服务容器配置
+services:
+  greet-rpc:
+    build:
+      context: .
+      dockerfile: app/greet/cmd/rpc/Dockerfile
+    environment:
+      - TZ=Asia/Shanghai
+    privileged: true
+    ports:
+      - "4001:4001"
+    stdin_open: true
+    tty: true
+    networks:
+      - jekka-go
+    restart: always
+
+  third-rpc:
+    build:
+      context: .
+      dockerfile: app/third/cmd/rpc/Dockerfile
+    environment:
+      - TZ=Asia/Shanghai
+    privileged: true
+    ports:
+      - "4002:4002"
+    stdin_open: true
+    tty: true
+    networks:
+      - jekka-go
+    restart: always
+
+  third-api:
+    build:
+      context: .
+      dockerfile: app/third/cmd/api/Dockerfile
+    environment:
+      - TZ=Asia/Shanghai
+    privileged: true
+    ports:
+      - "5001:5001"
+    stdin_open: true
+    tty: true
+    networks:
+      - jekka-go
+    restart: always
+
+  third-mq:
+    build:
+      context: .
+      dockerfile: app/third/cmd/job/Dockerfile
+    environment:
+      - TZ=Asia/Shanghai
+    privileged: true
+    ports:
+      - "8901:8901"
+    stdin_open: true
+    tty: true
+    networks:
+      - jekka-go
+    restart: always

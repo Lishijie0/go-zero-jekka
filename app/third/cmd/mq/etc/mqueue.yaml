@@ -1,0 +1,92 @@
+Name: mqueue-service
+
+# Log
+Log:
+  ServiceName: mqueue-service
+  Level: info
+  Encoding: plain
+  Path: ./logs     # 日志目录
+  Mode: file       # 输出到文件
+  Compress: true   # 压缩旧日志
+
+
+# Redis
+Redis:
+  Host: 54.213.111.192:6379
+  Type: node
+  Pass: MtpRedis011
+  DB: 7
+
+# MySQL配置
+MySQL:
+  DataSource: admin:ZK9Vx49QSTs07u6P@tcp(54.213.111.192:3306)/jekka_main?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  MaxIdleConns: 10
+  MaxOpenConns: 100
+  ConnMaxLifetime: 3600
+
+# 三方数据库
+MySQLThird:
+  DataSource: admin:ZK9Vx49QSTs07u6P@tcp(54.213.111.192:3306)/jekka_third?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  MaxIdleConns: 10
+  MaxOpenConns: 100
+  ConnMaxLifetime: 3600
+
+# 分表数据库
+MySQLThirdV2:
+  DataSource: admin:ZK9Vx49QSTs07u6P@tcp(54.213.111.192:3306)/jekka_third_v2?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  MaxIdleConns: 10
+  MaxOpenConns: 100
+  ConnMaxLifetime: 3600
+
+# Asynq 监控web ui
+Monitor:
+  Enabled: true
+  Port: 8901
+  Path: /monitor
+  Name: "jekka"
+  Pass: "jekka2025"
+
+# Third platform config
+ThirdPlatformConfig:
+  # Lazada 合作伙伴（开发）
+  Lazada:
+    ClientID: "129259"
+    ClientSecret: "VwltqKH1mSg2fMTaCmLaIXhKdPe25GwZ"
+
+  # Lazada 合作伙伴（线上）
+  #Lazada:
+  #  ClientID: 129623
+  #  ClientSecret: p3eKlu2erx2BxOsZMbrxb3RcoXz4hmVM
+
+  # Shopee 合作伙伴 (线上)
+  Shopee:
+    ClientID: 2009210
+    ClientSecret: "575474464564736a494a72556d4e46536866784b7064507a6f744e6b7a424158"
+  # Shopee合作伙伴（测试）
+  #SE_APP_CLIENT_ID=1139514
+  #SE_APP_CLIENT_SECRET=496d69694666706962646d5741786875526d764f57564b77564a5a6e53474972
+
+  # Shopee Erp 合作伙伴 (线上)
+  ShopeeErp:
+    ClientID: 2008211
+    ClientSecret: "766d7a7348634f70674c42446266714a4874524a70586c42475672686d754f4e"
+  # Shopee合作伙伴（Erp测试）
+  #SE_APP_CLIENT_ID_02=1158516
+  #SE_APP_CLIENT_SECRET_02=79554c6166556178546d72496665555a484d5270766f586577426f744362724a
+
+  # TikTok 合作伙伴 (开发)
+  TikTok:
+#    ClientID: "6cqk50olr6oag"
+#    ClientSecret: "fa2807aea3be2ac84df3c437d82fc5ebbe73f7f2"
+    ClientID: "6bmb38qust8ia"
+    ClientSecret: "9cd3faea269f9462e343505254cf356c6883f801"
+
+  # TikTok 合作伙伴 (线上)
+  #TikTok:
+  #  ClientID: 6b9vbrjsgve72
+  #  ClientSecret: 6e1ae65a938f2da4b5ca135813d58d70d9f0fb48
+
+  # TikTok US 合作伙伴 ()
+  TikTokUs:
+    ClientID: "6bj2evku2gkrm"
+    ClientSecret: "482490aec68201ba1ff0b4868c293bd1842a9b9c"

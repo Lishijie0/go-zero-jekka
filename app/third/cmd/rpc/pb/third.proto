@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package third;
+option go_package="./third";
+
+import "google/protobuf/struct.proto";
+
+message productDetail{
+  int64 id = 1;
+  int64 jkShopId = 2;
+  string productId = 3;
+  string title = 4;
+  float minPrice = 5;
+  float maxPrice = 6;
+  int64 createAt = 7;
+  google.protobuf.Struct options = 8;
+}
+
+message ProductDetailReq{
+  int64 id = 1;
+}
+
+message ProductDetailResp{
+  productDetail data = 1;
+}
+
+message ProductListReq{
+  int64 jkShopId = 1;
+  int64 page = 2;
+  int64 pageSize = 3;
+}
+
+message ProductListResp{
+  repeated productDetail data = 1;
+}
+
+service Third {
+  // 查询商品详情
+  rpc productDetail(ProductDetailReq) returns(ProductDetailResp);
+  // 店铺商品列表
+  rpc productList(ProductListReq) returns(ProductListResp);
+}

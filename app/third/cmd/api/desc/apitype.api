@@ -1,0 +1,19 @@
+syntax = "v1"
+
+type asyncShopBasicDataReq {
+	JkShopId int64 `json:"jk_shop_id"`
+	JkUserId int64 `json:"jk_user_id"`
+}
+
+type asyncShopBasicDataResp {
+}
+
+// webhookOrder
+type syncWebhookOrderReq {
+	JkShopId int64 `json:"jk_shop_id"`
+	JkUserId int64 `json:"jk_user_id"`
+	JkOrderId string `json:"order_id"`
+}
+
+type syncWebhookOrderResp {
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package greet;
+option go_package = "./greet";
+
+enum Status{
+  UNSPECIFIED = 0;
+  SUCCESS = 1;
+  FAILED = 2;
+}
+
+message SendMessageReq{
+  string message = 1;
+}
+
+message SendMessage{
+  // 使用枚举
+  Status status = 1;
+  // 数组
+  repeated string array = 2;
+  // map
+  map<string, int32> map = 3;
+  // 布尔类型
+  bool boolean = 4;
+  // 序列号保留
+  reserved 5;
+}
+
+message SendMessageResp{
+  SendMessage data = 2;
+}
+
+// 定义 Greet 服务
+service Greet {
+  rpc SendMessage(SendMessageReq) returns (SendMessageResp);
+}

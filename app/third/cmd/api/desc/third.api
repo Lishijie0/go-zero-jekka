@@ -1,0 +1,16 @@
+syntax = "v1"
+
+import "apitype.api"
+
+@server (
+	prefix:     /api/v1
+	middleware: AuthInterceptor
+)
+service third-api {
+	@handler asyncShopBasicData
+	post /shop/asyncBasicData (asyncShopBasicDataReq) returns (asyncShopBasicDataResp)
+
+	@handler syncWebhookOrder
+	post /shop/syncWebhookOrder (syncWebhookOrderReq) returns (syncWebhookOrderResp)
+}
+
